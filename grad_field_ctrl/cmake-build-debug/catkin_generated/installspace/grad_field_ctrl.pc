@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: grad_field_ctrl
+Description: Description of grad_field_ctrl
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: frontier_exploration geometry_msgs nav_msgs roscpp std_msgs

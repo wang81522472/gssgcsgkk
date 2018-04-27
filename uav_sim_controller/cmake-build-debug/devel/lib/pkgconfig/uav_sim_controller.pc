@@ -1,0 +1,8 @@
+prefix=/home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/src/uav_sim_controller/cmake-build-debug/devel
+
+Name: uav_sim_controller
+Description: Description of uav_sim_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/src/uav_sim_controller/cmake-build-debug/devel/lib 
+Requires: 

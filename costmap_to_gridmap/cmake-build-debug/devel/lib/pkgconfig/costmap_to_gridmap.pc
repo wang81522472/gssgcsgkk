@@ -1,0 +1,8 @@
+prefix=/home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/src/costmap_to_gridmap/cmake-build-debug/devel
+
+Name: costmap_to_gridmap
+Description: Description of costmap_to_gridmap
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/src/costmap_to_gridmap/cmake-build-debug/devel/lib -lcostmap_to_gridmap
+Requires: costmap_2d geometry_msgs grid_map_core grid_map_costmap_2d grid_map_msgs grid_map_ros grid_map_visualization nav_msgs std_msgs tf visualization_msgs roscpp

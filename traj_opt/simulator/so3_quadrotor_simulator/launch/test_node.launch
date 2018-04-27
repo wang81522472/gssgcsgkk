@@ -1,0 +1,76 @@
+<launch>
+  <node pkg="so3_quadrotor_simulator"
+        type="quadrotor_simulator_so3"
+        name="quadrotor_simulator_so3"
+        output="screen">
+    <param name="rate/odom" value="100.0"/>
+    <remap from="~odom" to="odom"/>
+    <remap from="~cmd" to="so3_cmd"/>
+    <remap from="~force_disturbance" to="force_disturbance"/>    
+    <remap from="~moment_disturbance" to="moment_disturbance"/>        
+  </node>
+  
+  <node pkg="so3_disturbance_generator"
+        name="so3_disturbance_generator"
+        type="so3_disturbance_generator"       
+        output="screen">
+    <remap from="~odom" to="odom"/>            
+    <remap from="~position_cmd" to="position_cmd"/>            
+    <remap from="~noisy_odom" to="noisy_odom"/>                        
+    <remap from="~force_disturbance" to="force_disturbance"/>        
+    <remap from="~moment_disturbance" to="moment_disturbance"/>            
+  </node>
+  
+  <node pkg="dynamic_reconfigure"
+        name="reconfigure_gui"
+        type="reconfigure_gui"       
+        output="screen"
+        args="/so3_disturbance_generator"/>    
+  
+  
+  <node pkg="so3_control"
+        type="so3_control"
+        name="so3_control"
+        output="screen">
+    <remap from="~odom" to="noisy_odom"/>    
+    <remap from="~position_cmd" to="position_cmd"/>
+    <remap from="~motors" to="motors"/>
+    <remap from="~corrections" to="corrections"/>
+    <remap from="~so3_cmd" to="so3_cmd"/>
+    <rosparam file="$(find so3_control)/config/gains.yaml"/>
+    <param name="mass" value="0.5"/>
+  </node>  
+  
+  <node pkg="so3_trajectory"
+    type="so3_trajectory"
+    name="so3_trajectory"
+    output="screen">
+    <remap from="~odom" to="noisy_odom"/>        
+    <remap from="~goal" to="goal"/>    
+    <remap from="~position_cmd" to="position_cmd"/>
+    <rosparam file="$(find so3_control)/config/gains.yaml"/>
+  </node>    
+<!--
+  <node pkg="odom_visualization"
+        name="odom_visualization_ukf"
+        type="odom_visualization"       
+        output="screen">
+    <remap from="~odom" to="noisy_odom"/>
+    <param name="tf_frame_id" value="/ukf"/>
+  </node>       
+-->
+  <node pkg="odom_visualization"
+        name="odom_visualization_vicon"
+        type="odom_visualization"       
+        output="screen">
+    <remap from="~odom" to="odom"/>
+    <param name="tf_frame_id" value="/vicon"/>
+  </node>     
+
+  <node name="rviz" 
+        pkg="rviz" 
+        type="rviz" 
+        respawn="false"
+        args="-d /home/shaojie/Desktop/vision/rviz_config_vision.vcg"/>  
+  
+</launch>

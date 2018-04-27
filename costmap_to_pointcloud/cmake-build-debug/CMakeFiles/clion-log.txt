@@ -1,0 +1,32 @@
+/home/chengdaqian/Software/clion-2017.2.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/src/costmap_to_pointcloud
+-- Using CATKIN_DEVEL_PREFIX: /home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/src/costmap_to_pointcloud/cmake-build-debug/devel
+-- Using CMAKE_PREFIX_PATH: /home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/devel;/home/chengdaqian/catkin_ws/devel;/opt/ros/kinetic
+-- This workspace overlays: /home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/devel;/home/chengdaqian/catkin_ws/devel;/opt/ros/kinetic
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/src/costmap_to_pointcloud/cmake-build-debug/test_results
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.6
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- Checking for module 'eigen3'
+--   Found eigen3, version 3.2.92
+-- Eigen found (include: /usr/include/eigen3, version: 3.2.92)
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
+--   system
+--   filesystem
+--   thread
+--   date_time
+--   iostreams
+--   serialization
+--   chrono
+--   atomic
+--   regex
+-- looking for PCL_COMMON
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/chengdaqian/UAV_UGV_Exploration/explor_catkin_ws/src/costmap_to_pointcloud/cmake-build-debug

@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="uav_sim_controller" type="uav_sim_controller" name="uav_sim_ctrl" output="screen">
+        <remap from="~cmd_vel" to="/robot_0/cmd_vel"/>
+        <remap from="~odom"    to="/robot_0/odom"/>
+        <remap from="~goal_location" to ="/harmonic_duet_node/uav_goal_point"/>
+        <param name="~min_vel" type="double" value="0.5"/> 
+    </node>
+
+
+</launch>

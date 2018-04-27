@@ -1,0 +1,12 @@
+<launch>
+    <node pkg="grad_field_ctrl" type="grad_field_ctrl" name="uav_sim_ctrl" ns="robot_0" output="screen">
+        <param name="~tf_offset_x" type="double" value="-1.0"/>
+        <param name="~tf_offset_y" type="double" value="-1.0"/>
+        <param name="~ori_x" type="double" value="-5.0"/>
+        <param name="~ori_y" type="double" value="-5.0"/>
+        <param name="~resolution" type="double" value="0.1"/>
+        <param name="~speed" type="double" value="0.5"/>
+
+        <remap from="~grad" to="/explore_server/explore_costmap/harmonic_explore/uav_gradient"/>
+    </node>
+</launch>

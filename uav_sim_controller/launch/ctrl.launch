@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="uav_sim_controller" type="uav_sim_controller" name="uav_sim_ctrl" output="screen">
+        <remap from="~cmd_vel" to="/robot_0/cmd_vel"/>
+        <remap from="~odom"    to="/robot_0/odom"/>
+        <remap from="~goal_location" to ="/explore_server/explore_costmap/harmonic_explore/uav_goal_point"/>
+    </node>
+</launch>
